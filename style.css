@@ -3,6 +3,7 @@
 :root {
   --menu-color: #666;
   --border-color: black;
+  --secondary-color: #ffd5ad;
   font-family: Lato;
 }
 body,
@@ -91,9 +92,18 @@ aside h2 {
   justify-content: space-between;
 }
 
-aside .rush-delivery {
+aside #filter-delivery {
   padding: 10px;
   width: 100%;
   border-top: 1px solid var(--border-color);
   border-bottom: 1px solid var(--border-color);
+}
+
+#filter-delivery label {
+  background-color: var(--secondary-color);
+  border-radius: 10px;
+}
+
+aside #filter-price{
+    
 }
