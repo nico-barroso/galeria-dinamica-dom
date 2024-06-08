@@ -1,0 +1,99 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+
+:root {
+  --menu-color: #666;
+  --border-color: black;
+  font-family: Lato;
+}
+body,
+a,
+li {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 50px;
+  margin-top: 30px;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+nav .logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 160px;
+  border-right: 1px solid black;
+}
+.logo-container .logo {
+  height: 20px;
+}
+
+nav .context-menu {
+  display: flex;
+  height: 100%;
+  width: 60%;
+  font-family: Lato;
+  text-transform: uppercase;
+  font-weight: 400;
+  color: var(--menu-color);
+  text-decoration: none;
+  padding: 0;
+}
+nav .context-menu li {
+  align-content: center;
+  height: 100%;
+  padding: 10px;
+}
+nav .context-menu li:hover {
+  background-color: gray;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+}
+
+nav .icon-menu {
+  display: flex;
+  gap: 10px;
+  height: 100%;
+  width: 100%;
+  padding: 0;
+}
+
+nav .icon-menu li {
+  display: flex;
+  align-content: center;
+  height: 100%;
+  padding: 10px;
+}
+
+/*** Aside Filters ****/
+aside {
+  width: 20%;
+  height: 100%;
+  background-color: #fafafa;
+}
+aside h2 {
+  font-size: 1.2rem;
+}
+.flex {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+aside .rush-delivery {
+  padding: 10px;
+  width: 100%;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+}
