@@ -16,7 +16,10 @@
       href="./assets/img/favicon-32x32.png"
       type="image/x-icon"
     />
-    <link rel="stylesheet" href="font-awesome.min.css" />
+    <link
+      rel="stylesheet"
+      href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"
+    />
     <link rel="stylesheet" href="style.css" />
     <title>Zennioptical | Men's Glassess</title>
     <script src="app.js" defer></script>
@@ -25,6 +28,7 @@
     <header>
       <nav>
         <div class="logo-container">
+          <i class="fa fa-bars col-menu" aria-hidden="true"></i>
           <img
             src="./assets/img/zenni-logo.avif"
             alt="Zennioptical logo"
@@ -38,14 +42,31 @@
           <li><a href="">Discover</a></li>
           <li><a href="">Contacts</a></li>
         </ul>
-        <input type="text" name="search" id="search" placeholder="Search" />
+        <input
+          type="text"
+          name="search"
+          id="search"
+          placeholder="Search glasses and contacts"
+        />
+        <!--El texto cuenta con una clase hidden que solo se activa al llegar a window-size
+        de 750px-->
         <ul class="icon-menu">
           <li>
-            <i class="fa fa-shopping-cart" aria-hidden="true"></i
-            ><a href="">Login</a>
+            <i class="fa fa-user" aria-hidden="true"></i>
+            <a href=""><span class="hidden">Login</span></a>
           </li>
-          <li><a href="">Favorites</a></li>
-          <li><a href="">Cart</a></li>
+          <li>
+            <i class="fa fa-heart-o" aria-hidden="true"></i
+            ><a href=""><span class="hidden">Favorites</span></a>
+          </li>
+          <li>
+            <i class="fa fa-question-circle" aria-hidden="true"></i>
+            <a href=""><span class="hidden">Help</span></a>
+          </li>
+          <li>
+            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+            <a href=""><span class="hidden">Help</span></a>
+          </li>
         </ul>
       </nav>
     </header>
