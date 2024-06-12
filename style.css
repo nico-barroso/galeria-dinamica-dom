@@ -26,8 +26,7 @@ nav {
   align-items: center;
   justify-content: space-between;
   max-width: 100vw;
-  height: 60px;
-  margin-top: 30px;
+  height: 70px;
 
   border-top: var(--border);
   border-bottom: var(--border);
@@ -125,7 +124,7 @@ nav input#search {
   background-repeat: no-repeat;
   padding-left: 40px;
 
-  font-size: 0.7em;
+  font-size: 0.9em;
   font-family: Lato;
   font-weight: 400;
   color: var(--primary-color);
@@ -177,16 +176,22 @@ nav .icon-menu li:hover {
   background-color: var(--bs-gray);
   color: var(--third-color);
 }
+main {
+  display: flex;
+}
+
 /*** Aside Filters ****/
 aside {
-  width: 20%;
+  min-width: 300px;
+
   height: 100%;
   background-color: #fafafa;
 }
+
 aside h2 {
   font-size: 1.2rem;
 }
-.flex {
+.flex-row {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -195,7 +200,7 @@ aside h2 {
 
 aside #filter-delivery {
   padding: 10px;
-  width: 100%;
+  max-width: 100%;
   border-top: var(--border);
   border-bottom: var(--border);
 }
@@ -205,6 +210,84 @@ aside #filter-delivery {
   border-radius: 10px;
 }
 
+/*----------------MAIN-CONTENT---------------------*/
+
+#gallery-shop {
+  padding: 1em;
+}
+
+#gallery-shop .intro {
+  display: flex;
+  min-width: 100%;
+  height: auto;
+  border-bottom: var(--border);
+}
+#gallery-shop .intro div {
+  width: 60%;
+}
+
+#gallery-shop .intro .find-size {
+  position: relative;
+  width: 40%;
+  margin: 16px 0px 16px 0px;
+
+  > a {
+    display: flex;
+    gap: 8px;
+    position: absolute;
+    align-content: center;
+    right: 0;
+    bottom: 0;
+    font-family: Lato;
+    font-weight: 700;
+    color: var(--third-color);
+    cursor: pointer;
+  }
+}
+
+#gallery-shop .results-sort {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: var(--border);
+}
+
+/*---- CARD ----*/
+#gallery-grid {
+  background-color: red;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+}
+
+#gallery-grid .card {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: blue;
+  > img {
+    max-width: 100%;
+  }
+  > .name {
+    order: 3;
+  }
+}
+
+.card .rate {
+  display: flex;
+  width: 100%;
+  > .star {
+    height: 20px;
+  }
+  .flex-card {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+}
 /*------MEDIA-QUERYS------*/
 
 @media all and (max-width: 1350px) {
