@@ -1,11 +1,12 @@
 const products = [
+  
   {
     name: "Too Smooth",
     size: "M",
     price: 35.95,
     rate: 4.4,
-    thumbImg: "./assets/img/gafa-img/1925-eyeglass-normal.webp",
-    hoverImg: "./assets/img/gafa-img/1925-eyeglass-angle.webp",
+    thumbImg: "./assets/img/gafa-img/1925-eyeglass-normal.png",
+    hoverImg: "./assets/img/gafa-img/1925-eyeglass-angle.png",
     alt: "",
     link: " https://www.zennioptical.com/p/mens-rectangle-eyeglass-frames/1951?skuId=195112",
   },
@@ -14,8 +15,8 @@ const products = [
     size: "L",
     price: 25.95,
     rate: 4.2,
-    thumbImg: "./assets/img/gafa-img/1926-eyeglass-normal.webp",
-    hoverImg: "./assets/img/gafa-img/1926-eyeglass-angle.webp",
+    thumbImg: "./assets/img/gafa-img/1926-eyeglass-normal.png",
+    hoverImg: "./assets/img/gafa-img/1926-eyeglass-angle.png",
     link: "https://www.zennioptical.com/p/mens-stainless-steel-rectangle-eyeglass-frames/3271?skuId=327112",
   },
   {
@@ -23,25 +24,62 @@ const products = [
     size: "L",
     price: 45.95,
     rate: "5",
-    thumbImg: "./assets/img/gafa-img/1927-eyeglass-front.webp",
-    hoverImg: "./assets/img/gafa-img/1927-eyeglass-angle.webp",
+    thumbImg: "./assets/img/gafa-img/1927-eyeglass-front.png",
+    hoverImg: "./assets/img/gafa-img/1927-eyeglass-angle.png",
+    alt: "",
+    link: "",
+  },
+  {
+    name: "Las",
+    size: "L",
+    price: 45.95,
+    rate: "5",
+    thumbImg: "./assets/img/gafa-img/1928-eyeglass-normal.png",
+    hoverImg: "./assets/img/gafa-img/1928-eyeglass-angle.png",
+    alt: "",
+    link: "",
+  },
+  {
+    name: "Tos",
+    size: "L",
+    price: 45.95,
+    rate: "5",
+    thumbImg: "./assets/img/gafa-img/1929-eyeglass-front.png",
+    hoverImg: "./assets/img/gafa-img/1929-eyeglass-angle.png",
+    alt: "",
+    link: "",
+  },
+  {
+    name: "Square",
+    size: "M",
+    price: 12.95,
+    rate: "4.6",
+    thumbImg: "./assets/img/gafa-img/1930-eyeglass-front.png",
+    hoverImg: "./assets/img/gafa-img/1930-eyeglass-angle.png",
     alt: "",
     link: "",
   },
 ];
 
+//! -----------Funciones de procesado de lista de datos---------
+//? Array - Int
+//Cuenta la longitud de la lista de objetos y devuelve un entero que se pasa por
+//un párrafo antes de la galería dinámica.
 function productTotalPag(products) {
   const resultSection = document.querySelector(".results-sort");
   const p = document.createElement("p");
-  p.innerHTML = `Showing a total of ${products.length} products`;
 
+  p.innerHTML = `Showing a total of ${products.length} products`;
   resultSection.insertBefore(p, resultSection.firstChild);
 }
 
 productTotalPag(products);
 
+//? Array - Lista dinámica
+//Esta función recibe la 
 function productGallery(products) {
   const gridGalleryContainer = document.querySelector("#gallery-grid");
+
   for (const product of products) {
     const article = document.createElement("article");
     article.setAttribute("class", "card");
@@ -71,7 +109,7 @@ function galleryHoverThumb(products) {
   const cards = Array.from(container.children);
 
   //Hacemos que al añadir eventos el índice del foreach coincida con el índice
-  //del array de objetos, puesto que ambas imágenes comparten el mismo index.
+  //del array de objetos, puesto que ambas imágenes comparten el mismo índice en el array.
 
   cards.forEach((card, index) => {
     card.addEventListener("mouseover", () => {
@@ -92,14 +130,148 @@ function galleryHoverThumb(products) {
 }
 
 galleryHoverThumb(products);
-
 function filterSize() {
   const filter = document.querySelector("aside");
-  if (window.innerWidth < 900) {
-    filter.style.display = "none";
+  const showFilterClass = "show-filter";
+  let showFilter = document.querySelector(".show-filter");
+
+  // Create the filter button if it doesn't exist
+  if (!showFilter) {
+    showFilter = document.createElement("div");
+    showFilter.classList.add(showFilterClass);
+    showFilter.innerHTML = `
+      <div class="filter-button">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="12"
+          height="10"
+          viewBox="0 0 12 10"
+          fill="none"
+          class="filter-icon"
+        >
+          <path
+            d="M9.31563 6.19851C10.3844 6.19851 11.25 7.04956 11.25 8.09956C11.25 9.14895 10.3844 10 9.31563 10C8.24752 10 7.38127 9.14895 7.38127 8.09956C7.38127 7.04956 8.24752 6.19851 9.31563 6.19851ZM4.54685 7.28885C5.01497 7.28885 5.39497 7.66218 5.39497 8.1221C5.39497 8.58139 5.01497 8.95534 4.54685 8.95534H0.84812C0.379998 8.95534 0 8.58139 0 8.1221C0 7.66218 0.379998 7.28885 0.84812 7.28885H4.54685ZM1.93436 0C3.00311 0 3.86873 0.851053 3.86873 1.90044C3.86873 2.95044 3.00311 3.80149 1.93436 3.80149C0.866245 3.80149 0 2.95044 0 1.90044C0 0.851053 0.866245 0 1.93436 0ZM10.4025 1.06781C10.87 1.06781 11.25 1.44114 11.25 1.90044C11.25 2.36035 10.87 2.73369 10.4025 2.73369H6.70377C6.23565 2.73369 5.85565 2.36035 5.85565 1.90044C5.85565 1.44114 6.23565 1.06781 6.70377 1.06781H10.4025Z"
+            fill="#333333"
+          ></path>
+        </svg>
+        <span class="h-filter">Show filters</span>
+      </div>
+    `;
+
+    // Attach click event listener after creating the element
+    showFilter.addEventListener("click", () => {
+      filter.classList.toggle("hidden");
+    });
+  }
+
+  // Handle filter visibility based on window width
+  if (window.innerWidth < 1050) {
+    filter.classList.add("hidden");
+    if (!document.querySelector(".show-filter")) {
+      const introColumn = document.querySelector("#intro");
+      introColumn.insertBefore(showFilter, introColumn.firstChild);
+    }
   } else {
-    filter.style.display = "block";
+    filter.classList.remove("hidden");
+    if (document.querySelector(".show-filter")) {
+      showFilter.remove();
+    }
   }
 }
 
-window.onresize = filterSize;
+// Ensure filterSize runs on window resize
+window.addEventListener("resize", filterSize);
+
+// Initial call to set initial state on page load
+filterSize();
+
+function searchBar(event) {
+  const input = event.target.value.toLowerCase();
+  const sBar = document.querySelector("#search").value;
+  // Clear previous search results
+
+  products.forEach((product, index) => {
+    if (product.name.toLowerCase().startsWith(input)) {
+      document.querySelector("#gallery-grid").innerHTML = `
+      <p>${product.name}</p>`;
+
+      const listItem = document.createElement("li");
+      listItem.textContent = product.name;
+      console.log(listItem);
+      console.log(sBar);
+    } else if ((sBar.length = 0)) {
+      console.log("Soy null");
+    }
+  });
+}
+
+document.querySelector("#search").addEventListener("input", searchBar);
+const sB = document.querySelector("#search");
+
+function searchBarDiv() {
+  if (sB.hasFocus()) {
+    const greyWindow = document.createElement("div");
+    const searchResult = document.createElement("div");
+
+    greyWindow.setAttribute("class", "grey-window");
+    searchResult.setAttribute("class", "search-result");
+
+    document.body.appendChild(greyWindow);
+    document.body.appendChild(searchResult);
+    greyWindow.addEventListener("click", () => {
+      greyWindow.classList.toggle("hidden");
+    });
+  }
+}
+//!REVISAR
+// searchBarDiv();
+// Attach event listener to the search bar
+
+function gridVisibility() {
+  const gridContainer = document.querySelector("#gallery-grid");
+  const threeColIcon = document.querySelector("#three-column");
+  const twoColIcon = document.querySelector("#two-column");
+
+  // Create and append the one-column icon once
+
+  function eventsIcons() {
+    twoColIcon.addEventListener("click", () => {
+      gridContainer.classList.remove("three-columns");
+      gridContainer.classList.add("two-columns");
+      twoColIcon.classList.add("icons");
+      threeColIcon.classList.remove("icons");
+    });
+
+    threeColIcon.addEventListener("click", () => {
+      gridContainer.classList.remove("two-columns");
+      gridContainer.classList.add("three-columns");
+      threeColIcon.classList.add("icons");
+      twoColIcon.classList.remove("icons");
+    });
+  }
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth < 900) {
+      gridContainer.classList.add("two-columns");
+      threeColIcon.classList.add("hidden");
+      twoColIcon.classList.add("icons");
+    } else {
+      twoColIcon.classList.remove("icons");
+      threeColIcon.classList.remove("hidden");
+      gridContainer.classList.remove("two-columns");
+      gridContainer.classList.add("three-columns");
+    }
+  });
+
+  if (gridContainer.classList.contains("three-columns")) {
+    threeColIcon.classList.add("icons");
+    twoColIcon.classList.remove("icons");
+  } else if (gridContainer.classList.contains("two-columns")) {
+    twoColIcon.classList.add("icons");
+    threeColIcon.classList.remove("icons");
+  }
+
+  eventsIcons();
+}
+
+gridVisibility();

@@ -2,6 +2,7 @@
 
 :root {
   --border: 1px solid #d8d1ca;
+  --border-color: #d8d1ca;
   --primary-color: #666666;
   --third-color: #007b8f;
   --secondary-color: #ffd5ad;
@@ -19,15 +20,19 @@ a {
   list-style: none;
   color: inherit;
 }
+.hidden {
+  display: none;
+}
 
 nav {
+  z-index: 5;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
   max-width: 100vw;
   height: 70px;
-
+  background-color: white;
   border-top: var(--border);
   border-bottom: var(--border);
 }
@@ -179,9 +184,11 @@ nav .icon-menu li:hover {
 
 /*** Aside Filters ****/
 aside {
+  position: sticky;
   min-width: 300px;
-
-  height: 100%;
+  margin: 15px;
+  padding: 15px;
+  min-height: 100%;
   background-color: #fafafa;
 }
 
@@ -195,22 +202,18 @@ aside h2 {
   justify-content: space-between;
 }
 
-aside #filter-delivery {
-  padding: 10px;
-  max-width: 100%;
-  border-top: var(--border);
-  border-bottom: var(--border);
-}
-
-#filter-delivery label {
-  background-color: var(--secondary-color);
-  border-radius: 10px;
-}
-
 /*----------------MAIN-CONTENT---------------------*/
 
 #gallery-shop {
   padding: 1em;
+  overflow-y: scroll;
+  max-width: 100%;
+  height: 800px;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+#gallery-shop::-webkit-scrollbar {
+  display: none;
 }
 
 #gallery-shop .intro {
@@ -246,45 +249,61 @@ aside #filter-delivery {
   display: flex;
   justify-content: space-between;
   border-bottom: var(--border);
+  .sort {
+    display: flex;
+    gap: 10px;
+  }
 }
 
-/*---- CARD ----*/
 #gallery-grid {
   width: 100%;
   height: 1000px;
+  margin-top: 20px;
+}
+
+.three-columns {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 500px;
   row-gap: 16px;
   column-gap: 16px;
 }
 
+.two-columns {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 16px;
+  column-gap: 16px;
+}
+
+/*---- CARD ----*/
 #gallery-grid .card {
   cursor: pointer;
   display: flex;
   flex-direction: column;
   position: relative;
-  max-width: 100%;
-  max-width: 100%;
+  width: 100%;
+  height: 500px; /* Altura fija para las tarjetas */
+  overflow: hidden; /* Para ocultar contenido desbordado */
 
   .img-container {
     order: 1;
     display: flex;
-    width: 100%;
-    min-height: 60%;
     justify-content: center;
     align-content: center;
+    border-radius: 20px;
+    background-color: rgba(216, 209, 202, 0.144);
+    flex: 1;
 
     img {
       width: 100%;
-      object-fit: contain;
+      height: 100%;
+      object-fit: contain; /* Asegura que la imagen cubra todo el contenedor */
     }
   }
 }
 
 .card .rate {
   display: flex;
-  width: auto;
   align-items: center;
   order: 3;
   gap: 6px;
@@ -324,6 +343,17 @@ aside #filter-delivery {
   background-color: red;
   width: 100%;
   height: 100%;
+}
+
+#mail .input-flex {
+  display: flex;
+  input {
+    min-width: 150%;
+    height: 40px;
+  }
+  > .send {
+    width: 80px;
+  }
 }
 
 /*------MEDIA-QUERYS------*/
@@ -386,6 +416,43 @@ aside #filter-delivery {
 
 /* Iconos */
 
-#four-icon {
-  fill: red;
+.icons {
+  fill: rgb(66, 66, 66);
 }
+
+.grey-window {
+  z-index: 3;
+  top: 0;
+  position: absolute;
+  min-width: 100%;
+  min-height: 100%;
+  background-color: gray;
+  opacity: 0.5;
+}
+
+.search-result {
+  position: absolute;
+  margin: auto;
+  top: 72px;
+  z-index: 4;
+  width: 70%;
+  height: 400px;
+  background-color: blue;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.filter-button {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  svg {
+    height: 15px;
+    width: 15px;
+  }
+}
+
+/* ---- GRID VISIBILITY ----*/
