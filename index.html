@@ -22,7 +22,7 @@
     />
     <link rel="stylesheet" href="style.css" />
     <title>Zennioptical | Men's Glassess</title>
-    <script src="app.js" defer></script>
+    <script type="module" src="app.js" defer></script>
   </head>
   <body>
     <header>
@@ -36,16 +36,17 @@
           />
         </div>
         <ul class="context-menu">
-          <li><a href="">Men</a></li>
-          <li><a href="">Woman</a></li>
-          <li><a href="">Kids</a></li>
-          <li><a href="">Discover</a></li>
-          <li><a href="">Contacts</a></li>
+          <li><a href="#">Men</a></li>
+          <li><a href="#">Woman</a></li>
+          <li><a href="#">Kids</a></li>
+          <li><a href="#">Discover</a></li>
+          <li><a href="#">Contacts</a></li>
         </ul>
         <input
           type="text"
           name="search"
           id="search"
+          aria-labelledby="search"
           placeholder="Search glasses and contacts"
         />
         <!--El texto cuenta con una clase hidden que solo se activa al llegar a window-size
@@ -73,36 +74,82 @@
     <main>
       <div>
         <div class="flex-row">
-          <aside>
+          <aside class="slideIn">
             <div class="flex">
               <h2>Filters</h2>
             </div>
-            <section id="filter-price">
+            <section id="rush-delivery">
               <div class="flex">
-                <h3>Price</h3>
-                <ul class="filter-list">
-                  <li><input type="checkbox" name="" id="" />6.95€</li>
-                  <li><input type="checkbox" name="" id="" /> Under 10€</li>
-                  <li><input type="checkbox" name="" id="" />Under 20€</li>
-                  <li><input type="checkbox" name="" id="" />Under 30€</li>
-                  <li><input type="checkbox" name="" id="" />Above 30€</li>
-                </ul>
+                <form aria-label="Filter by rush delivery">
+                  <h3>Delivery</h3>
+                  <ul class="filter-list">
+                    <li>
+                      <input type="checkbox" name="rushdel" id="rushdel" />
+                      <label for="rushdel">Rush delivery</label>
+                    </li>
+                  </ul>
+                </form>
+              </div>
+            </section>
+            <section id="filter-brand">
+              <div class="flex">
+                <form aria-label="Filter by brand">
+                  <h3>Brand</h3>
+                  <ul class="filter-list">
+                    <li>
+                      <input type="checkbox" name="adiddas" id="adiddas" />
+                      <label for="adiddas">Adiddas</label>
+                    </li>
+                    <li>
+                      <input type="checkbox" name="zenni" id="zenni" />
+                      <label for="zenni">Zenni</label>
+                    </li>
+                    <li>
+                      <input
+                        type="checkbox"
+                        name="marcjacobs"
+                        id="marcjacobs"
+                      />
+                      <label for="marcjacobs">Marc Jacobs</label>
+                    </li>
+                  </ul>
+                </form>
               </div>
             </section>
             <section id="filter-price">
               <div class="flex">
-                <h3>Style</h3>
-                <ul class="filter-list">
-                  <li><input type="checkbox" name="" id="" />6.95€</li>
-                  <li><input type="checkbox" name="" id="" /> Under 10€</li>
-                  <li><input type="checkbox" name="" id="" />Under 20€</li>
-                  <li><input type="checkbox" name="" id="" />Under 30€</li>
-                  <li><input type="checkbox" name="" id="" />Above 30€</li>
-                </ul>
+                <form aria-label="Filter price by range">
+                  <h3>Price</h3>
+                  <ul class="filter-list">
+                    <li>
+                      <input type="checkbox" name="six" id="price-six" />
+                      <label for="price-six">6.95€</label>
+                    </li>
+                    <li>
+                      <input type="checkbox" name="und10" id="price-und10" />
+                      <label for="price-und10">Under 10</label>
+                    </li>
+                    <li>
+                      <input type="checkbox" name="und20" id="price-und20" />
+                      <label for="price-und20">Under 20</label>
+                    </li>
+                    <li>
+                      <input type="checkbox" name="und30" id="price-und30" />
+                      <label for="price-und30">Under 30</label>
+                    </li>
+                    <li>
+                      <input
+                        type="checkbox"
+                        name="above30"
+                        id="price-above30"
+                      />
+                      <label for="price-above30">Above 30</label>
+                    </li>
+                  </ul>
+                </form>
               </div>
             </section>
           </aside>
-
           <section id="gallery-shop">
             <article class="intro">
               <div id="intro">
@@ -271,26 +318,84 @@
         </div>
       </div>
       <section id="mail">
-        <h2>Get 10% off your first order</h2>
-        <h3>Sign up now for exclusive news and savings</h3>
-        <div class="input-flex">
-          <input type="text" placeholder="Search glasses and contacts" />
-          <button type="submit" class="send">Sign Up</button>
-          
+        <div class="title">
+          <h2>Get 10% off your first order</h2>
+          <h3>Sign up now for exclusive news and savings</h3>
         </div>
-        <div>
-        <p>
-          10% off only applies to full price items. Zenni reserves the right
-          to modify or cancel at any time.
-        </p>
-            <a href="https://www.zennioptical.com/privacy-policy"
-              >Privacy Policy</a
-            >
-            & <a href="https://www.zennioptical.com/terms-of-use">Terms</a>
-          </p>
-        </div>
+        <form action="" class="form" aria-label="mail input">
+          <div class="input-flex">
+            <input
+              type="text"
+              placeholder="Email Address"
+              aria-labelledby="mail input"
+            />
+            <button type="submit" class="send">Sign Up</button>
+          </div>
+          <div>
+            <p>
+              10% off only applies to full price items. Zenni reserves the right
+              to modify or cancel at any time.
+            </p>
+            <div aria-label="Read our Privacy Policy">
+              <a
+                class="links"
+                href="https://www.zennioptical.com/privacy-policy"
+                >Privacy Policy</a
+              >
+              &
+              <a class="links" href="https://www.zennioptical.com/terms-of-use"
+                >Terms</a
+              >
+            </div>
+          </div>
+        </form>
+      </section>
+      <section id="get-app">
+        <img src="./assets/img/logo-peque.avif" alt="Logo Zenni" class="logo" />
+        <h2>Get the app</h2>
+        <a href=""
+          ><img
+            class="apple"
+            src="./assets/img/apple-download.svg"
+            alt="Donwload on the App Store"
+        /></a>
+        <a href=""
+          ><img
+            class="google"
+            src="./assets/img/google-download.png"
+            alt="Get it on Google Play Store"
+        /></a>
       </section>
     </main>
-    <footer></footer>
+    <footer>
+      <section id="services"></section>
+      <section id="copy">
+        <p>
+          © COPYRIGHT
+          <script type="text/javascript">
+            document.write(new Date().getFullYear());
+          </script>
+          ZENNI OPTICAL ®, INC. ALL RIGHTS RESERVED.
+        </p>
+        <ul class="statements">
+          <li>
+            <a
+              href="https://www.zennioptical.com/b/sunglasses#:~:text=ALL%20RIGHTS%20RESERVED.-,Terms%20of%20Use,-%7C"
+              >Terms of Use</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.zennioptical.com/b/sunglasses#:~:text=%7C-,Privacy%20Policy,-%7C"
+              >Privacy Policy</a
+            >
+          </li>
+          <li><a href="">California Consumers Privacy Notice</a></li>
+          <li><a href="">Rights Request Form</a></li>
+          <li><a href="">Accessibility Statement</a></li>
+          <li><a href="">Your Privacy Rights</a></li>
+        </ul>
+      </section>
+    </footer>
   </body>
 </html>

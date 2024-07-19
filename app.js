@@ -1,65 +1,4 @@
-const products = [
-  
-  {
-    name: "Too Smooth",
-    size: "M",
-    price: 35.95,
-    rate: 4.4,
-    thumbImg: "./assets/img/gafa-img/1925-eyeglass-normal.png",
-    hoverImg: "./assets/img/gafa-img/1925-eyeglass-angle.png",
-    alt: "",
-    link: " https://www.zennioptical.com/p/mens-rectangle-eyeglass-frames/1951?skuId=195112",
-  },
-  {
-    name: "Rectangle",
-    size: "L",
-    price: 25.95,
-    rate: 4.2,
-    thumbImg: "./assets/img/gafa-img/1926-eyeglass-normal.png",
-    hoverImg: "./assets/img/gafa-img/1926-eyeglass-angle.png",
-    link: "https://www.zennioptical.com/p/mens-stainless-steel-rectangle-eyeglass-frames/3271?skuId=327112",
-  },
-  {
-    name: "The Playmaker",
-    size: "L",
-    price: 45.95,
-    rate: "5",
-    thumbImg: "./assets/img/gafa-img/1927-eyeglass-front.png",
-    hoverImg: "./assets/img/gafa-img/1927-eyeglass-angle.png",
-    alt: "",
-    link: "",
-  },
-  {
-    name: "Las",
-    size: "L",
-    price: 45.95,
-    rate: "5",
-    thumbImg: "./assets/img/gafa-img/1928-eyeglass-normal.png",
-    hoverImg: "./assets/img/gafa-img/1928-eyeglass-angle.png",
-    alt: "",
-    link: "",
-  },
-  {
-    name: "Tos",
-    size: "L",
-    price: 45.95,
-    rate: "5",
-    thumbImg: "./assets/img/gafa-img/1929-eyeglass-front.png",
-    hoverImg: "./assets/img/gafa-img/1929-eyeglass-angle.png",
-    alt: "",
-    link: "",
-  },
-  {
-    name: "Square",
-    size: "M",
-    price: 12.95,
-    rate: "4.6",
-    thumbImg: "./assets/img/gafa-img/1930-eyeglass-front.png",
-    hoverImg: "./assets/img/gafa-img/1930-eyeglass-angle.png",
-    alt: "",
-    link: "",
-  },
-];
+import { servicesFooterData, products } from "./data.js";
 
 //! -----------Funciones de procesado de lista de datos---------
 //? Array - Int
@@ -76,7 +15,8 @@ function productTotalPag(products) {
 productTotalPag(products);
 
 //? Array - Lista dinámica
-//Esta función recibe la 
+//Esta función recibe una lista de objetos para crear una lista de cartas predefinida
+//que crea diferentes estilos de cartas y
 function productGallery(products) {
   const gridGalleryContainer = document.querySelector("#gallery-grid");
 
@@ -84,6 +24,7 @@ function productGallery(products) {
     const article = document.createElement("article");
     article.setAttribute("class", "card");
     article.innerHTML = `
+    <div class="top-card"><p>${product.label}</p><i class="fa fa-heart-o" aria-hidden="true"></i></div>
       <div class="img-container">
         <img src="${product.thumbImg}" alt="" />
       </div>
@@ -165,7 +106,7 @@ function filterSize() {
   }
 
   // Handle filter visibility based on window width
-  if (window.innerWidth < 1050) {
+  if (window.innerWidth < 1090) {
     filter.classList.add("hidden");
     if (!document.querySelector(".show-filter")) {
       const introColumn = document.querySelector("#intro");
@@ -185,44 +126,6 @@ window.addEventListener("resize", filterSize);
 // Initial call to set initial state on page load
 filterSize();
 
-function searchBar(event) {
-  const input = event.target.value.toLowerCase();
-  const sBar = document.querySelector("#search").value;
-  // Clear previous search results
-
-  products.forEach((product, index) => {
-    if (product.name.toLowerCase().startsWith(input)) {
-      document.querySelector("#gallery-grid").innerHTML = `
-      <p>${product.name}</p>`;
-
-      const listItem = document.createElement("li");
-      listItem.textContent = product.name;
-      console.log(listItem);
-      console.log(sBar);
-    } else if ((sBar.length = 0)) {
-      console.log("Soy null");
-    }
-  });
-}
-
-document.querySelector("#search").addEventListener("input", searchBar);
-const sB = document.querySelector("#search");
-
-function searchBarDiv() {
-  if (sB.hasFocus()) {
-    const greyWindow = document.createElement("div");
-    const searchResult = document.createElement("div");
-
-    greyWindow.setAttribute("class", "grey-window");
-    searchResult.setAttribute("class", "search-result");
-
-    document.body.appendChild(greyWindow);
-    document.body.appendChild(searchResult);
-    greyWindow.addEventListener("click", () => {
-      greyWindow.classList.toggle("hidden");
-    });
-  }
-}
 //!REVISAR
 // searchBarDiv();
 // Attach event listener to the search bar
@@ -275,3 +178,61 @@ function gridVisibility() {
 }
 
 gridVisibility();
+
+function asideAnimation() {
+  const aside = document.querySelector(aside);
+  console.log(showFilter);
+}
+
+// asideAnimation();
+
+function serviceFooter(data) {
+  const servContainer = document.querySelector("#services");
+  servContainer.innerHTML = ""; // Clear existing content
+
+  data.forEach((service) => {
+    const article = document.createElement("article");
+    article.classList.add("faq");
+
+    const h3 = document.createElement("h3");
+    h3.textContent = service.title;
+    article.appendChild(h3);
+
+    const ul = document.createElement("ul");
+    ul.classList.add("subgrid");
+    article.appendChild(ul);
+
+    service.servicesArr.forEach((nameLink) => {
+      const li = document.createElement("li");
+      const a = document.createElement("a");
+      a.href = nameLink.link;
+      if (service.icons === false) {
+        a.textContent = nameLink.sName;
+      }
+      if (service.icons === true) {
+        a.innerHTML = `${nameLink.icon} ${nameLink.sName} `;
+      }
+      li.appendChild(a);
+      ul.appendChild(li);
+    });
+
+    servContainer.appendChild(article);
+  });
+}
+
+serviceFooter(servicesFooterData);
+
+function footerExp() {
+  const articles = document.querySelectorAll("#services article");
+
+  articles.forEach((article) => {
+    const h3Click = article.querySelector("h3");
+    const subgrid = article.querySelector(".subgrid");
+    
+      h3Click.addEventListener("click", () => {
+        subgrid.classList.toggle("expanded");
+        console.log(h3Click);
+      });
+  });
+}
+footerExp();
