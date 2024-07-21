@@ -72,251 +72,238 @@
       </nav>
     </header>
     <main>
-      <div>
-        <div class="flex-row">
-          <aside class="slideIn">
+      <div class="flex-row">
+        <aside class="slideIn">
+            <h2>Filters</h2>
+          <section id="rush-delivery">
             <div class="flex">
-              <h2>Filters</h2>
+              <form aria-label="Filter by rush delivery">
+                <h3>Delivery</h3>
+                <ul class="filter-list">
+                  <li>
+                    <input type="checkbox" name="rushdel" id="rushdel" />
+                    <label for="rushdel">Rush delivery</label>
+                  </li>
+                </ul>
+              </form>
             </div>
-            <section id="rush-delivery">
-              <div class="flex">
-                <form aria-label="Filter by rush delivery">
-                  <h3>Delivery</h3>
-                  <ul class="filter-list">
-                    <li>
-                      <input type="checkbox" name="rushdel" id="rushdel" />
-                      <label for="rushdel">Rush delivery</label>
-                    </li>
-                  </ul>
-                </form>
-              </div>
-            </section>
-            <section id="filter-brand">
-              <div class="flex">
-                <form aria-label="Filter by brand">
-                  <h3>Brand</h3>
-                  <ul class="filter-list">
-                    <li>
-                      <input type="checkbox" name="adiddas" id="adiddas" />
-                      <label for="adiddas">Adiddas</label>
-                    </li>
-                    <li>
-                      <input type="checkbox" name="zenni" id="zenni" />
-                      <label for="zenni">Zenni</label>
-                    </li>
-                    <li>
-                      <input
-                        type="checkbox"
-                        name="marcjacobs"
-                        id="marcjacobs"
-                      />
-                      <label for="marcjacobs">Marc Jacobs</label>
-                    </li>
-                  </ul>
-                </form>
-              </div>
-            </section>
-            <section id="filter-price">
-              <div class="flex">
-                <form aria-label="Filter price by range">
-                  <h3>Price</h3>
-                  <ul class="filter-list">
-                    <li>
-                      <input type="checkbox" name="six" id="price-six" />
-                      <label for="price-six">6.95€</label>
-                    </li>
-                    <li>
-                      <input type="checkbox" name="und10" id="price-und10" />
-                      <label for="price-und10">Under 10</label>
-                    </li>
-                    <li>
-                      <input type="checkbox" name="und20" id="price-und20" />
-                      <label for="price-und20">Under 20</label>
-                    </li>
-                    <li>
-                      <input type="checkbox" name="und30" id="price-und30" />
-                      <label for="price-und30">Under 30</label>
-                    </li>
-                    <li>
-                      <input
-                        type="checkbox"
-                        name="above30"
-                        id="price-above30"
-                      />
-                      <label for="price-above30">Above 30</label>
-                    </li>
-                  </ul>
-                </form>
-              </div>
-            </section>
-          </aside>
-          <section id="gallery-shop">
-            <article class="intro">
-              <div id="intro">
-                <h1>Find The Latest Stylish Frames For Men's Glasses.</h1>
-                <p>
-                  Crafted for every face, our men's eyeglasses come in a variety
-                  of shapes and materials. Choose a timeless aviator style or
-                  discover modern frames. Add Blokz® blue light lenses to any
-                  frame for enhanced protection. Discover which glasses are
-                  right for you and elevate your look!
-                </p>
-              </div>
-              <div class="find-size">
-                <a href="">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="23"
-                    height="18"
-                    viewBox="0 0 23 18"
-                    fill="none"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
-                      d="M22.3528 6.07402C22.6553 6.58961 22.4766 7.24958 21.9541 7.54517L4.8776 17.2349C4.35513 17.5305 3.68486 17.3552 3.38238 16.8396L0.646309 12.1786C0.343834 11.663 0.526003 11.0065 1.04848 10.7075L3.42021 9.36351L5.47225 12.8489C5.54788 12.9795 5.71632 13.0242 5.84693 12.9486L6.32127 12.6805C6.45188 12.6049 6.49659 12.4399 6.42096 12.3127L4.36889 8.81697L6.26629 7.74111L7.22527 9.37382C7.3009 9.50443 7.46934 9.54911 7.59995 9.47348L8.07429 9.20538C8.2049 9.12975 8.24961 8.96823 8.17398 8.83758L7.21496 7.20832L9.11236 6.13246L11.1644 9.62816C11.2401 9.7588 11.4085 9.80348 11.5391 9.72785L12.0134 9.45975C12.1441 9.38413 12.1887 9.21914 12.1131 9.09196L10.0576 5.59622L11.955 4.52035L12.914 6.14619C12.9896 6.2768 13.1581 6.32151 13.2887 6.24588L13.763 5.97778C13.8936 5.90215 13.9383 5.74059 13.8627 5.60998L12.9037 3.98069L14.8011 2.90483L16.8532 6.3971C16.9288 6.52775 17.0972 6.57243 17.2278 6.4968L17.7022 6.2287C17.8328 6.15307 17.8775 5.99151 17.8018 5.8609L15.7498 2.36516L18.1215 1.0212C18.644 0.725568 19.3142 0.90089 19.6167 1.41648L22.3528 6.07402Z"
-                      fill="#007B8F"
-                    ></path>
-                  </svg>
-                  Find Your Size</a
-                >
-              </div>
-            </article>
-            <article class="results-sort">
-              <ul class="sort">
-                <!--Icono 2-->
-                <svg
-                  width="32"
-                  height="21"
-                  viewBox="0 0 32 21"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  id="two-column"
-                >
-                  <g clip-path="url(#clip0_2_2)">
-                    <rect width="32" height="21" fill="white" />
-                    <rect
-                      x="0.25"
-                      y="0.25"
-                      width="14.5"
-                      height="8.5"
-                      rx="0.75"
-                      stroke="black"
-                      stroke-width="0.5"
-                    />
-                    <rect
-                      x="17.25"
-                      y="0.25"
-                      width="14.5"
-                      height="8.5"
-                      rx="0.75"
-                      stroke="black"
-                      stroke-width="0.5"
-                    />
-                    <rect
-                      x="17.25"
-                      y="12.25"
-                      width="14.5"
-                      height="8.5"
-                      rx="0.75"
-                      stroke="black"
-                      stroke-width="0.5"
-                    />
-                    <rect
-                      x="0.25"
-                      y="12.25"
-                      width="14.5"
-                      height="8.5"
-                      rx="0.75"
-                      stroke="black"
-                      stroke-width="0.5"
-                    />
-                  </g>
-                  <defs>
-                    <clipPath id="clip0_2_2">
-                      <rect width="32" height="21" fill="white" />
-                    </clipPath>
-                  </defs>
-                </svg>
-                <!--Icon 3-->
-                <svg
-                  width="49"
-                  height="21"
-                  viewBox="0 0 49 21"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  id="three-column"
-                  class=""
-                >
-                  <g clip-path="url(#clip0_2_12)">
-                    <rect width="49" height="21" fill="white" />
-                    <rect
-                      x="0.25"
-                      y="0.25"
-                      width="14.5"
-                      height="8.5"
-                      rx="0.75"
-                      stroke="black"
-                      stroke-width="0.5"
-                    />
-                    <rect
-                      x="34.25"
-                      y="0.25"
-                      width="14.5"
-                      height="8.5"
-                      rx="0.75"
-                      stroke="black"
-                      stroke-width="0.5"
-                    />
-                    <rect
-                      x="17.25"
-                      y="0.25"
-                      width="14.5"
-                      height="8.5"
-                      rx="0.75"
-                      stroke="black"
-                      stroke-width="0.5"
-                    />
-                    <rect
-                      x="17.25"
-                      y="12.25"
-                      width="14.5"
-                      height="8.5"
-                      rx="0.75"
-                      stroke="black"
-                      stroke-width="0.5"
-                    />
-                    <rect
-                      x="0.25"
-                      y="12.25"
-                      width="14.5"
-                      height="8.5"
-                      rx="0.75"
-                      stroke="black"
-                      stroke-width="0.5"
-                    />
-                    <rect
-                      x="34.25"
-                      y="12.25"
-                      width="14.5"
-                      height="8.5"
-                      rx="0.75"
-                      stroke="black"
-                      stroke-width="0.5"
-                    />
-                  </g>
-                  <defs>
-                    <clipPath id="clip0_2_12">
-                      <rect width="49" height="21" fill="white" />
-                    </clipPath>
-                  </defs>
-                </svg>
-              </ul>
-            </article>
-            <div id="gallery-grid" class="three-columns"></div>
           </section>
-        </div>
+          <section id="filter-brand">
+            <div class="flex">
+              <form aria-label="Filter by brand">
+                <h3>Brand</h3>
+                <ul class="filter-list">
+                  <li>
+                    <input type="checkbox" name="adiddas" id="adiddas" />
+                    <label for="adiddas">Adiddas</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" name="zenni" id="zenni" />
+                    <label for="zenni">Zenni</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" name="marcjacobs" id="marcjacobs" />
+                    <label for="marcjacobs">Marc Jacobs</label>
+                  </li>
+                </ul>
+              </form>
+            </div>
+          </section>
+          <section id="filter-price">
+            <div class="flex">
+              <form aria-label="Filter price by range">
+                <h3>Price</h3>
+                <ul class="filter-list">
+                  <li>
+                    <input type="checkbox" name="six" id="price-six" />
+                    <label for="price-six">6.95€</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" name="und10" id="price-und10" />
+                    <label for="price-und10">Under 10</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" name="und20" id="price-und20" />
+                    <label for="price-und20">Under 20</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" name="und30" id="price-und30" />
+                    <label for="price-und30">Under 30</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" name="above30" id="price-above30" />
+                    <label for="price-above30">Above 30</label>
+                  </li>
+                </ul>
+              </form>
+            </div>
+          </section>
+        </aside>
+        <section id="gallery-shop">
+          <article id="intro">
+            <h1>Find The Latest Stylish Frames For Men's Glasses.</h1>
+            <p class="text-info">
+              Crafted for every face, our men's eyeglasses come in a variety of
+              shapes and materials. Choose a timeless aviator style or discover
+              modern frames. Add Blokz® blue light lenses to any frame for
+              enhanced protection. Discover which glasses are right for you and
+              elevate your look!
+            </p>
+            <div class="find-size">
+              <a href="">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="23"
+                  height="18"
+                  viewBox="0 0 23 18"
+                  fill="none"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M22.3528 6.07402C22.6553 6.58961 22.4766 7.24958 21.9541 7.54517L4.8776 17.2349C4.35513 17.5305 3.68486 17.3552 3.38238 16.8396L0.646309 12.1786C0.343834 11.663 0.526003 11.0065 1.04848 10.7075L3.42021 9.36351L5.47225 12.8489C5.54788 12.9795 5.71632 13.0242 5.84693 12.9486L6.32127 12.6805C6.45188 12.6049 6.49659 12.4399 6.42096 12.3127L4.36889 8.81697L6.26629 7.74111L7.22527 9.37382C7.3009 9.50443 7.46934 9.54911 7.59995 9.47348L8.07429 9.20538C8.2049 9.12975 8.24961 8.96823 8.17398 8.83758L7.21496 7.20832L9.11236 6.13246L11.1644 9.62816C11.2401 9.7588 11.4085 9.80348 11.5391 9.72785L12.0134 9.45975C12.1441 9.38413 12.1887 9.21914 12.1131 9.09196L10.0576 5.59622L11.955 4.52035L12.914 6.14619C12.9896 6.2768 13.1581 6.32151 13.2887 6.24588L13.763 5.97778C13.8936 5.90215 13.9383 5.74059 13.8627 5.60998L12.9037 3.98069L14.8011 2.90483L16.8532 6.3971C16.9288 6.52775 17.0972 6.57243 17.2278 6.4968L17.7022 6.2287C17.8328 6.15307 17.8775 5.99151 17.8018 5.8609L15.7498 2.36516L18.1215 1.0212C18.644 0.725568 19.3142 0.90089 19.6167 1.41648L22.3528 6.07402Z"
+                    fill="#007B8F"
+                  ></path>
+                </svg>
+                Find Your Size</a
+              >
+            </div>
+          </article>
+          <article class="results-sort">
+            <ul class="sort">
+              <!--Icono 2-->
+              <svg
+                width="32"
+                height="21"
+                viewBox="0 0 32 21"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                id="two-column"
+              >
+                <g clip-path="url(#clip0_2_2)">
+                  <rect width="32" height="21" fill="white" />
+                  <rect
+                    x="0.25"
+                    y="0.25"
+                    width="14.5"
+                    height="8.5"
+                    rx="0.75"
+                    stroke="black"
+                    stroke-width="0.5"
+                  />
+                  <rect
+                    x="17.25"
+                    y="0.25"
+                    width="14.5"
+                    height="8.5"
+                    rx="0.75"
+                    stroke="black"
+                    stroke-width="0.5"
+                  />
+                  <rect
+                    x="17.25"
+                    y="12.25"
+                    width="14.5"
+                    height="8.5"
+                    rx="0.75"
+                    stroke="black"
+                    stroke-width="0.5"
+                  />
+                  <rect
+                    x="0.25"
+                    y="12.25"
+                    width="14.5"
+                    height="8.5"
+                    rx="0.75"
+                    stroke="black"
+                    stroke-width="0.5"
+                  />
+                </g>
+                <defs>
+                  <clipPath id="clip0_2_2">
+                    <rect width="32" height="21" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+              <!--Icon 3-->
+              <svg
+                width="49"
+                height="21"
+                viewBox="0 0 49 21"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                id="three-column"
+                class=""
+              >
+                <g clip-path="url(#clip0_2_12)">
+                  <rect width="49" height="21" fill="white" />
+                  <rect
+                    x="0.25"
+                    y="0.25"
+                    width="14.5"
+                    height="8.5"
+                    rx="0.75"
+                    stroke="black"
+                    stroke-width="0.5"
+                  />
+                  <rect
+                    x="34.25"
+                    y="0.25"
+                    width="14.5"
+                    height="8.5"
+                    rx="0.75"
+                    stroke="black"
+                    stroke-width="0.5"
+                  />
+                  <rect
+                    x="17.25"
+                    y="0.25"
+                    width="14.5"
+                    height="8.5"
+                    rx="0.75"
+                    stroke="black"
+                    stroke-width="0.5"
+                  />
+                  <rect
+                    x="17.25"
+                    y="12.25"
+                    width="14.5"
+                    height="8.5"
+                    rx="0.75"
+                    stroke="black"
+                    stroke-width="0.5"
+                  />
+                  <rect
+                    x="0.25"
+                    y="12.25"
+                    width="14.5"
+                    height="8.5"
+                    rx="0.75"
+                    stroke="black"
+                    stroke-width="0.5"
+                  />
+                  <rect
+                    x="34.25"
+                    y="12.25"
+                    width="14.5"
+                    height="8.5"
+                    rx="0.75"
+                    stroke="black"
+                    stroke-width="0.5"
+                  />
+                </g>
+                <defs>
+                  <clipPath id="clip0_2_12">
+                    <rect width="49" height="21" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+            </ul>
+          </article>
+          <div id="gallery-grid" class="three-columns"></div>
+        </section>
       </div>
+
       <section id="mail">
         <div class="title">
           <h2>Get 10% off your first order</h2>

@@ -153,6 +153,10 @@ function gridVisibility() {
     });
   }
 
+  if (window.innerWidth < 901) {
+    const grid = document.querySelector("#gallery-grid");
+    grid.classList.toggle("two-columns");
+  }
   window.addEventListener("resize", () => {
     if (window.innerWidth < 900) {
       gridContainer.classList.add("two-columns");
@@ -228,11 +232,11 @@ function footerExp() {
   articles.forEach((article) => {
     const h3Click = article.querySelector("h3");
     const subgrid = article.querySelector(".subgrid");
-    
-      h3Click.addEventListener("click", () => {
-        subgrid.classList.toggle("expanded");
-        console.log(h3Click);
-      });
+
+    h3Click.addEventListener("click", () => {
+      subgrid.classList.toggle("expanded");
+      console.log(h3Click);
+    });
   });
 }
 footerExp();
