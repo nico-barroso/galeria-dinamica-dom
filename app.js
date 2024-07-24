@@ -135,7 +135,7 @@ function gridVisibility() {
   const twoColIcon = document.querySelector("#two-column");
 
   //Controla los botones de cambio de la grilla entre dos columnas tres al hacer click.
-  const eventsIcons = () => {
+  function eventsIcons() {
     twoColIcon.addEventListener("click", () => {
       gridContainer.classList.remove("three-columns");
       gridContainer.classList.add("two-columns");
@@ -149,10 +149,10 @@ function gridVisibility() {
       threeColIcon.classList.add("icons");
       twoColIcon.classList.remove("icons");
     });
-  };
+  }
 
   //Ajusta el tamaño de la grilla según el tamaño interno de la ventana del navegador.
-  const resize = () => {
+  function resize() {
     if (window.innerWidth < 901) {
       gridContainer.classList.toggle("two-columns");
     }
@@ -177,7 +177,7 @@ function gridVisibility() {
       twoColIcon.classList.add("icons");
       threeColIcon.classList.remove("icons");
     }
-  };
+  }
   resize();
   eventsIcons();
 }
