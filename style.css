@@ -32,9 +32,9 @@ a:hover {
   display: none;
 }
 
+/*!-------------------#NAV ---------------------------*/
 nav {
   z-index: 5;
-  /* position: fixed; */
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -54,10 +54,9 @@ nav .logo-container {
   width: 160px;
   padding: 0 20px 0 20px;
   border-right: var(--border);
-
   grid-area: header;
 }
-/*Icono menú colapsado*/
+
 nav .col-menu {
   display: none;
 }
@@ -72,15 +71,12 @@ nav .context-menu {
   font-size: 13px;
   text-transform: uppercase;
   font-weight: 400;
-
-  /**/
   grid-area: menu-icon;
 }
 
 nav .context-menu li {
   position: relative;
   display: flex;
-
   align-items: center;
   height: 100%;
   padding: 10px;
@@ -97,8 +93,6 @@ nav .context-menu li:hover {
   margin-right: -1px;
 }
 
-/*Añadimos la pequeá animación de la barra a ambos menús,
-la de los iconos y la normal*/
 nav .context-menu li:hover:after,
 nav .icon-menu li:hover:after {
   content: "";
@@ -133,20 +127,15 @@ nav input#search {
   border-radius: 20px;
   border: var(--border);
   margin: 0 30px 0 30px;
-
-  /*Icono y texto*/
   background-size: 20px;
   background-image: url(./assets/img/icons/magnifying-glass-svgrepo-com.svg);
   background-position: 9px 9px;
   background-repeat: no-repeat;
   padding-left: 40px;
-
   font-size: 0.9em;
   font-family: Lato;
   font-weight: 400;
   color: var(--primary-color);
-
-  /**/
   grid-area: search;
 }
 
@@ -154,7 +143,6 @@ nav .icon-menu {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-
   height: 100%;
   padding: 0;
 }
@@ -194,12 +182,11 @@ nav .icon-menu li:hover {
   color: var(--third-color);
 }
 
-/*** Aside Filters ****/
+/*! ------------Aside Filters------------------*/
 aside {
   position: sticky;
   min-width: 300px;
   margin: 15px;
-  /* margin-top: 80px; */
   padding: 15px;
   min-height: 100%;
   background-color: #fafafa;
@@ -271,7 +258,7 @@ aside {
     left: 0px; /* Ajusta según la posición final deseada */
   }
 }
-/*----------------MAIN-CONTENT---------------------*/
+/*!----------------MAIN-CONTENT---------------------*/
 
 #gallery-shop {
   /* margin-top: 80px; */
@@ -366,9 +353,10 @@ h1 {
   grid-template-columns: repeat(2, 1fr);
   row-gap: 16px;
   column-gap: 36px;
+  transition: max-height 0.3s ease-out;
 }
 
-/*---- CARD ----*/
+/*?------------------- CARD -----------------*/
 #gallery-grid .card {
   cursor: pointer;
   display: flex;
@@ -509,11 +497,11 @@ h1 {
   }
 }
 
-/* ---- GRID VISIBILITY ----*/
+/* ?---- GRID VISIBILITY ----*/
 .visibility {
   display: none;
 }
-/*** --- FORM ---**/
+/***?--- FORM ---**/
 
 #mail {
   display: flex;
@@ -609,16 +597,8 @@ h1 {
     width: 130px;
   }
 }
-@media all and (max-width: 750px) {
-  #get-app .logo {
-    display: none;
-  }
-  #get-app h2 {
-    font-size: 1.3em;
-    text-align: center;
-  }
-}
-/*** FOOTER ****/
+
+/***?---------------- FOOTER--------------------- ****/
 
 footer #services {
   height: 180px;
@@ -689,6 +669,13 @@ footer #services {
   }
 }
 
+/*!------- MEDIA QUERY -------*/
+
+@media all and (max-width: 1350px) {
+  nav .icon-menu li:nth-child(2n + 1) {
+    display: none;
+  }
+}
 @media all and (max-width: 1200px) {
   footer #services {
     display: flex;
@@ -726,7 +713,12 @@ footer #services {
     }
   }
 }
-
+@media (max-width: 768px) {
+  .aside {
+    opacity: 0.5; /* Cambia la opacidad */
+    background-size: 10px 10px; /* Cambia el tamaño del patrón */
+  }
+}
 @media (max-width: 600px) {
   aside {
     display: flex;
@@ -778,19 +770,6 @@ footer #services {
         font-size: 1.1em;
       }
     }
-  }
-}
-
-@media (max-width: 768px) {
-  .aside {
-    opacity: 0.5; /* Cambia la opacidad */
-    background-size: 10px 10px; /* Cambia el tamaño del patrón */
-  }
-}
-
-@media all and (max-width: 1350px) {
-  nav .icon-menu li:nth-child(2n + 1) {
-    display: none;
   }
 }
 
@@ -847,6 +826,14 @@ footer #services {
     max-width: 80%;
     margin: 0;
     justify-self: center;
+  }
+
+  #get-app .logo {
+    display: none;
+  }
+  #get-app h2 {
+    font-size: 1.3em;
+    text-align: center;
   }
 }
 
