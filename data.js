@@ -1,3 +1,4 @@
+/* ----------  Datos de Footer y de productos  ------ */
 export const servicesFooterData = [
   {
     title: "Frequently Asked Questions",
