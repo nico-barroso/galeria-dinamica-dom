@@ -1,6 +1,6 @@
 ![Logo](https://framerusercontent.com/images/zJBgnto0UuieHjFzX0KB4xPLrLk.png)
 
-# ThePower - Entrega Flexbox
+# ThePower - Entrega DOM Galería dinámica
 
 Este proyecto tiene como objetivo desarrollar un producto utilizando las herramientas del DOM para la manipulación de contenido y el acceso a datos, permitiendo generar, interactuar y modificar los elementos de manera dinámica.
 
